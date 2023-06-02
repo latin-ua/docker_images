@@ -1,8 +1,7 @@
 name: Master pipeline
-on:
-  push:
-    branches:
-      - 'master'
+on: push
+    #branches:
+    #  - 'master'
 
 env:
   REGISTRY: ghcr.io
