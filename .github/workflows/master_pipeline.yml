@@ -32,4 +32,4 @@ jobs:
         with:
           context: ./terraform_pipeline
           push: true
-          tags: ${{ env.DOCKER_REPOSITORY }}/terraform_pipeline:${{ github.sha }}
+          tags: ${{ env.DOCKER_REPOSITORY }}/terraform_pipeline:latest
