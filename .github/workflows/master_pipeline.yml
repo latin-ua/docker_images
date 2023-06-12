@@ -1,8 +1,8 @@
 name: Master pipeline
 on:
   push:
-    branches:
-      - 'master'
+  pull_request:
+    types: [ reopened ]
 
 env:
   REGISTRY: ghcr.io
@@ -31,5 +31,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./terraform_pipeline
-          push: true
+          push: ${{ github.ref_name == 'master' }}
           tags: ${{ env.DOCKER_REPOSITORY }}/terraform_pipeline:latest
