@@ -4,4 +4,4 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 RUN apk update
 RUN apk add aws-cli jq kubectl helm helmfile terraform git
-RUN helm plugin install https://github.com/databus23/helm-diff
+RUN helmfile init --force
